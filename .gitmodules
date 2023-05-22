@@ -1,0 +1,6 @@
+[submodule "Assets/Plugins/Tri-Inspector"]
+	path = Assets/Plugins/Tri-Inspector
+	url = https://github.com/codewriter-packages/Tri-Inspector
+[submodule "Assets/Plugins/AnimFlex"]
+	path = Assets/Plugins/AnimFlex
+	url = https://github.com/somedeveloper00/AnimFlex
