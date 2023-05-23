@@ -4,3 +4,6 @@
 [submodule "Assets/Plugins/AnimFlex"]
 	path = Assets/Plugins/AnimFlex
 	url = https://github.com/somedeveloper00/AnimFlex
+[submodule "Assets/Plugins/BlockyMapGen"]
+	path = Assets/Plugins/BlockyMapGen
+	url = https://github.com/somedeveloper00/BlockyMapGen
