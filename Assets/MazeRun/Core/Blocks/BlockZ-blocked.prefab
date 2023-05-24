@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 836198617624890751, guid: 81bf72b8e33bc2648933f088e5c41c33, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1996009546958580816, guid: 81bf72b8e33bc2648933f088e5c41c33, type: 3}
       propertyPath: m_IsActive
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3236972803522241005, guid: 81bf72b8e33bc2648933f088e5c41c33, type: 3}
       propertyPath: m_Name
-      value: BlockZ-forward
+      value: BlockZ-blocked
       objectReference: {fileID: 0}
     - target: {fileID: 3236972803522241009, guid: 81bf72b8e33bc2648933f088e5c41c33, type: 3}
       propertyPath: m_RootOrder
