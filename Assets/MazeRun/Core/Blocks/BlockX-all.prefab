@@ -406,6 +406,8 @@ MonoBehaviour:
           selections:
           - transform: {fileID: 4786544109580089756}
             type: 1
+          - transform: {fileID: 4345566936071116311}
+            type: 3
           target: {r: 0.09803922, g: 0.5882353, b: 1, a: 1}
 --- !u!1 &1493668897
 GameObject:

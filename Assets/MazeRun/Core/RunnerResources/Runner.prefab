@@ -22806,24 +22806,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12372bbe5afb4bcf86bce15d7fba9c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.05
-      outSlope: 0.05
+      inSlope: 0.011111111
+      outSlope: 0.011111111
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 180
-      value: 10
-      inSlope: 0.05
-      outSlope: 0.05
+      time: 360
+      value: 5
+      inSlope: 0.011111111
+      outSlope: 0.011111111
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
