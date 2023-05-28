@@ -7,3 +7,6 @@
 [submodule "Assets/Plugins/BlockyMapGen"]
 	path = Assets/Plugins/BlockyMapGen
 	url = https://github.com/somedeveloper00/BlockyMapGen
+[submodule "Assets/Plugins/UnityDialogueSystem"]
+	path = Assets/Plugins/UnityDialogueSystem
+	url = https://github.com/somedeveloper00/UnityDialogueSystem

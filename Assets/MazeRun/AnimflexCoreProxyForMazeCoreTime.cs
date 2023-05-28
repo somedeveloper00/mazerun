@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using AnimFlex.Core.Proxy;
+using MazeRun.Core;
+using MazeRun.Utils;
 using UnityEngine;
 
 namespace MazeRun {
@@ -7,13 +9,12 @@ namespace MazeRun {
     public class AnimflexCoreProxyForMazeCoreTime : AnimflexCoreProxy {
         [SerializeField] AnimationCurve timescaleCurve;
         [SerializeField] bool setDefault = true;
+        [SerializeField] CoreTime coreTime;
         
         public static AnimflexCoreProxyForMazeCoreTime Default { get; private set; }
         
         void OnEnable() { if (setDefault) Default = this; }
 
-        protected override float GetDeltaTime() {
-            return timescaleCurve.Evaluate( Time.time ) * Time.deltaTime;
-        }
+        protected override float GetDeltaTime() => timescaleCurve.Evaluate( coreTime.time ) * coreTime.deltaTime;
     }
 }

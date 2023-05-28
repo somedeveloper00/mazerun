@@ -22769,7 +22769,6 @@ GameObject:
   - component: {fileID: 2677491009485720775}
   - component: {fileID: 2677491009485720776}
   - component: {fileID: 2677491009485720777}
-  - component: {fileID: 1253777657}
   m_Layer: 0
   m_Name: movement
   m_TagString: Untagged
@@ -22806,6 +22805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12372bbe5afb4bcf86bce15d7fba9c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coreTime: {fileID: 1664911084}
   speed: 15
   accelerationCurve:
     serializedVersion: 2
@@ -22884,44 +22884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09c7d6805a746b59a4728ab5d274b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotSpot: {x: 51.9, y: 3, z: 50.2}
---- !u!114 &1253777657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2677491009485720770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ae6ea3562f547cfa42f975d3eca400d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timescaleCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 180
-      value: 3
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  setDefault: 1
+  hotSpot: {x: 58.7, y: 10, z: 70.4}
 --- !u!1 &2677491009502442312
 GameObject:
   m_ObjectHideFlags: 0
@@ -23469,6 +23432,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2677491010541189888}
+  - component: {fileID: 1664911084}
+  - component: {fileID: 1664911085}
+  - component: {fileID: 4559826321152572717}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -23495,6 +23461,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1664911084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677491010541189919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b6a69285dc4df7888d80c8eb1ddfb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1664911085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677491010541189919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae6ea3562f547cfa42f975d3eca400d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timescaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.011111111
+      outSlope: 0.011111111
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 3
+      inSlope: 0.011111111
+      outSlope: 0.011111111
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  setDefault: 1
+  coreTime: {fileID: 1664911084}
+--- !u!114 &4559826321152572717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677491010541189919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e22e25fcb2c452189878abf63ad0067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 2677491009485720775}
+  coreTime: {fileID: 1664911084}
 --- !u!1 &2677491010587028206
 GameObject:
   m_ObjectHideFlags: 0

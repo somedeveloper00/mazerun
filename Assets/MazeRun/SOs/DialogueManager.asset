@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4384141582494da260308d2dfef692, type: 3}
+  m_Name: DialogueManager
+  m_EditorClassIdentifier: 
+  focusManager: {fileID: 11400000, guid: 3bcf73e3d823be340bddad318dca18ea, type: 2}
+  closeOnEscape: 1
+  creators:
+  - prefab: {fileID: 271867870187551085, guid: 1546a70dc821e1d4896dab6c1a65b009, type: 3}
+    maxInstances: 1
+    maximumReachedBehaviour: 0
+    fallbackScale: {x: 1080, y: 1920}
+    fallbackPixelPerUnit: 1
+  - prefab: {fileID: 8563272285405858786, guid: dbb01ab6adaa81841b1fe44cfc30b259, type: 3}
+    maxInstances: 1
+    maximumReachedBehaviour: 0
+    fallbackScale: {x: 1080, y: 1920}
+    fallbackPixelPerUnit: 1

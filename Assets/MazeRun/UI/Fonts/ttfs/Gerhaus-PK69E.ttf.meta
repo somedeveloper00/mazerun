@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: aadfea77bb6222f48bdc0d505bae8307
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gerhaus
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 52fd841963918624f9a0aae130f5c533, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

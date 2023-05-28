@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace MazeRun.Core {
     public class PlayerMovement : MonoBehaviour {
+        [SerializeField] CoreTime coreTime;
         [SerializeField] float speed = 10;
         [PropertyTooltip("over seconds")]
         [SerializeField] AnimationCurve accelerationCurve;
@@ -84,7 +85,7 @@ namespace MazeRun.Core {
                         if (!helpRotateRightCheckings.All( hc => hc.Hits( out _ ) )) {
                             Debug.Log( "help start" );
                             _helpDelayedInput = MovementInput.InputType.MoveRight;
-                            _helpDelayedInputTime = Time.time;
+                            _helpDelayedInputTime = coreTime.time;
                             break;
                         }
                     }
@@ -97,7 +98,7 @@ namespace MazeRun.Core {
                         if (!helpRotateLeftCheckings.All( hc => hc.Hits( out _ ) )) {
                             Debug.Log( "help start" );
                             _helpDelayedInput = MovementInput.InputType.MoveLeft;
-                            _helpDelayedInputTime = Time.time;
+                            _helpDelayedInputTime = coreTime.time;
                             break;
                         }
                     }
@@ -112,13 +113,13 @@ namespace MazeRun.Core {
         }
 
         void updateMovement() {
-            _t += Time.deltaTime;
-            transform.position += speed * Time.deltaTime * accelerationCurve.Evaluate( _t ) * transform.forward;
+            _t += coreTime.deltaTime;
+            transform.position += speed * coreTime.deltaTime * accelerationCurve.Evaluate( _t ) * transform.forward;
         }
 
         void updateRotateHelp() {
             if (!_helpDelayedInput.HasValue) return;
-            if (_helpDelayedInputTime - Time.time > rotateHelpDuration) {
+            if (_helpDelayedInputTime - coreTime.time > rotateHelpDuration) {
                 _helpDelayedInput = null;
                 Debug.Log( "help end" );
                 return;
