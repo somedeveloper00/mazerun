@@ -12,12 +12,16 @@ namespace MazeRun.Core {
         [PropertyTooltip("over seconds")]
         [SerializeField] AnimationCurve accelerationCurve;
         [SerializeField] MovementInput input;
+        [SerializeField] float startInvincibleSeconds = 2;
+        [SerializeField] float reviveInvincibleSeconds = 2;
         [SerializeField] HitChecking loseChecking;
+        [SerializeField] SequenceAnim showUpSeq;
         [SerializeField] SequenceAnim jumpSeq;
         [SerializeField] SequenceAnim slideSeq;
         [SerializeField] SequenceAnim rotateRightSeq;
         [SerializeField] SequenceAnim rotateLeftSeq;
         [SerializeField] SequenceAnim resetSeq;
+        [SerializeField] SequenceAnim reviveSeq;
         
         [Title( "Hit Checks" )] 
         [SerializeField] HitChecking rotateRightHitChecking;
@@ -34,8 +38,15 @@ namespace MazeRun.Core {
         float _t = 0;
         int _movementLock = 0;
         float _helpDelayedInputTime = -1;
+        float _invincibleTime = -1;
         MovementInput.InputType? _helpDelayedInput;
         MovementInput.InputType? _lastInputType;
+        
+        public event Action onJump = delegate {  };
+        public event Action onSlide = delegate {  };
+        public event Action onRight = delegate {  };
+        public event Action onLeft = delegate {  };
+        public event Action onLose = delegate { };
 
         void Start() {
             input.onInputReceived += onMovementInputReceived;
@@ -52,19 +63,30 @@ namespace MazeRun.Core {
             
             void decreaseLock() => _movementLock--;
             void increaseLock() => _movementLock++;
+            
+            _invincibleTime = startInvincibleSeconds;
         }
-
 
         void Update() {
             updateMovement();
             updateRotateHelp();
-            updateLose();
+            _invincibleTime -= coreTime.deltaTime;
+            if (_invincibleTime <= 0) updateLose();
         }
 
+        public void ShowUp() {
+            showUpSeq.PlaySequence();
+        }
+        
+        public void Revive() {
+            reviveSeq.PlaySequence();
+            _invincibleTime = reviveInvincibleSeconds;
+        }
+        
         void updateLose() {
             if (!loseChecking.Hits( out _ )) return;
-            Debug.Log( $"GAME OVER" );
             loseAnimHandler.StartAnimation();
+            onLose();
         }
 
         void onMovementInputReceived(MovementInput.InputType inputType) {
@@ -160,23 +182,26 @@ namespace MazeRun.Core {
             Debug.Log( "right" );
             rotateRightSeq.PlaySequence();
             transform.forward = transform.right;
-
+            onRight();
         }
 
         void moveLeft() {
             Debug.Log( "left" );
             rotateLeftSeq.PlaySequence();
             transform.forward = -transform.right;
+            onLeft();
         }
 
         void jump() {
             Debug.Log( "jump" );
             jumpSeq.PlaySequence();
+            onJump();
         }
         
         void slide() {
             Debug.Log( "down" );
             slideSeq.PlaySequence();
+            onSlide();
         }
     }
 }

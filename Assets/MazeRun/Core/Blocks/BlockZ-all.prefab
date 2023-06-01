@@ -9684,17 +9684,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 0.24166666
-        outSlope: 0.24166666
+        inSlope: 0.2
+        outSlope: 0.2
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 120
-        value: 30
-        inSlope: 0.24166666
-        outSlope: 0.24166666
+        time: 10
+        value: 3
+        inSlope: 0.2
+        outSlope: 0.2
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -9708,21 +9708,21 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 34
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 2
         value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        inSlope: Infinity
+        outSlope: 1
+        tangentMode: 7
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -9733,21 +9733,21 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 34
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 2
         value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        inSlope: Infinity
+        outSlope: 1
+        tangentMode: 7
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -9758,21 +9758,21 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 34
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 2
         value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        inSlope: Infinity
+        outSlope: 1
+        tangentMode: 7
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -9785,17 +9785,17 @@ MonoBehaviour:
         time: 0
         value: 0
         inSlope: 0.1
-        outSlope: 0.1
-        tangentMode: 34
+        outSlope: Infinity
+        tangentMode: 97
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
         value: 1
-        inSlope: 0.1
+        inSlope: Infinity
         outSlope: 0.1
-        tangentMode: 34
+        tangentMode: 7
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
@@ -9810,17 +9810,17 @@ MonoBehaviour:
         time: 0
         value: 0
         inSlope: 0.1
-        outSlope: 0.1
-        tangentMode: 34
+        outSlope: Infinity
+        tangentMode: 97
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
         value: 1
-        inSlope: 0.1
+        inSlope: Infinity
         outSlope: 0.1
-        tangentMode: 34
+        tangentMode: 7
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
@@ -9835,17 +9835,17 @@ MonoBehaviour:
         time: 0
         value: 0
         inSlope: 0.1
-        outSlope: 0.1
-        tangentMode: 34
+        outSlope: Infinity
+        tangentMode: 97
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
         value: 1
-        inSlope: 0.1
+        inSlope: Infinity
         outSlope: 0.1
-        tangentMode: 34
+        tangentMode: 7
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
@@ -10609,7 +10609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2975092308324833364
 Transform:
   m_ObjectHideFlags: 0
@@ -11116,7 +11116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11183,7 +11183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.86
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11250,7 +11250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.86
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11317,7 +11317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11394,7 +11394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.86
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11615,7 +11615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 338723910671865422, guid: c160f3194c68cbb4cbd64979291e9a57, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,7 +12,7 @@ namespace MazeRun.UI {
         Coroutine _clickCoroutine = null;
         
         public override void OnPointerClick(PointerEventData eventData) {
-            if (!IsActive() || !IsInteractable() || eventData?.button != PointerEventData.InputButton.Left)
+            if (_clickCoroutine != null || !IsActive() || !IsInteractable() || eventData?.button != PointerEventData.InputButton.Left)
                 return;
             _clickCoroutine = StartCoroutine( clickRoutine() );
         }

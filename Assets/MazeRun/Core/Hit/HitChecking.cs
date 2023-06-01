@@ -6,6 +6,7 @@ namespace MazeRun.Core.Hit {
         
 #if UNITY_EDITOR
         [ShowInInspector] bool _isHittingTarget => Hits( out _ );
+        [ShowInInspector] HitTarget _hitTarget => Hits( out var t ) ? t : null;
 #endif
 
         public abstract bool Hits(out HitTarget hitTarget);

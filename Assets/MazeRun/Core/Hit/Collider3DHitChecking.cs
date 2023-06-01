@@ -7,6 +7,10 @@ namespace MazeRun.Core.Hit {
         bool _isHit = false;
         HitTarget _hitTarget;
 
+        void OnDisable() {
+            _isHit = false;
+            _hitTarget = null;
+        }
 
         void OnTriggerEnter(Collider other) {
             _hitTarget = other.gameObject.GetComponentInChildren<HitTarget>();

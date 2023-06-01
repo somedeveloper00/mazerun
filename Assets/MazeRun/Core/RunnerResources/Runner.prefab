@@ -384,14 +384,10 @@ MonoBehaviour:
   sequence:
     activateNextClipsASAP: 1
     nodes:
-    - name: Node 4
-      delay: 0
-      clip:
-        rid: 1318342489073778774
     - name: Node 2
       delay: 0
       clip:
-        rid: 1318342489073778772
+        rid: 6990533340041314409
     - name: Node 3
       delay: 0
       clip:
@@ -478,20 +474,10 @@ MonoBehaviour:
         explosionRadius: 6
         upwardsModifier: 0.2
         mode: 1
-    - rid: 1318342489073778772
-      type: {class: GameObjectSetActive, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
-      data:
-        gameObject: {fileID: 632295932}
-        active: 1
     - rid: 1318342489073778773
       type: {class: GameObjectSetActive, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
       data:
         gameObject: {fileID: 2677491009565430456}
-        active: 0
-    - rid: 1318342489073778774
-      type: {class: ComponentSetActive, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
-      data:
-        component: {fileID: 2677491009485720775}
         active: 0
     - rid: 1318342489073778800
       type: {class: CMultiTweenerFadeRenderer, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
@@ -533,6 +519,12 @@ MonoBehaviour:
           - transform: {fileID: 632295933}
             type: 1
           target: 0
+    - rid: 6990533340041314409
+      type: {class: GameObjectInstantiate_Simple, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        gameObject: {fileID: 632295932}
+        andSetActive: 1
+        andPlayItsSequence: 0
 --- !u!1 &150632294
 GameObject:
   m_ObjectHideFlags: 0
@@ -11898,9 +11890,9 @@ MonoBehaviour:
   playOnStart: 0
   dontWaitInQueueToPlay: 1
   useProxyAsCore: 1
-  useDefaultCoreProxy: 1
+  useDefaultCoreProxy: 0
   defaultCoreProxy: MazeRun.AnimflexCoreProxyForMazeCoreTime
-  coreProxy: {fileID: 0}
+  coreProxy: {fileID: 1664911085}
   resetOnPlay: 1
   activateNextClipsASAP: 1
   sequence:
@@ -22508,6 +22500,153 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &2090826019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090826020}
+  - component: {fileID: 2090826021}
+  m_Layer: 0
+  m_Name: reviveSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2090826020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090826019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2677491010587028207}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090826021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090826019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 0
+  useDefaultCoreProxy: 0
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyScaled
+  coreProxy: {fileID: 1664911085}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: view
+      delay: 0
+      clip:
+        rid: 6990533340041314410
+    - name: view
+      delay: 0
+      clip:
+        rid: 6990533340041314411
+    - name: Node 2
+      delay: 0
+      clip:
+        rid: 6990533340041314412
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533340041314410
+      type: {class: GameObjectSetActive, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        gameObject: {fileID: 2677491009565430456}
+        active: 1
+    - rid: 6990533340041314411
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 1
+          ease: 20
+          duration: 0.4
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 2677491009565430457}
+          target: {x: 0, y: -40, z: 0}
+    - rid: 6990533340041314412
+      type: {class: CTweenerLocalRotation, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 2
+          duration: 0.4
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 2677491009565430457}
+          target: {x: 0, y: 0, z: 0}
 --- !u!1 &2103850774
 GameObject:
   m_ObjectHideFlags: 0
@@ -22800,7 +22939,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677491009485720770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12372bbe5afb4bcf86bce15d7fba9c5e, type: 3}
   m_Name: 
@@ -22832,12 +22971,16 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   input: {fileID: 2677491009485720776}
+  startInvincibleSeconds: 2
+  reviveInvincibleSeconds: 2
   loseChecking: {fileID: 2677491009565430462}
+  showUpSeq: {fileID: 5592918727531980560}
   jumpSeq: {fileID: 2677491010594515905}
   slideSeq: {fileID: 2677491009724150621}
   rotateRightSeq: {fileID: 2677491009722069885}
   rotateLeftSeq: {fileID: 2677491010909529894}
   resetSeq: {fileID: 1105928172}
+  reviveSeq: {fileID: 2090826021}
   rotateRightHitChecking: {fileID: 2677491009273705993}
   rotateLeftHitChecking: {fileID: 2677491010757306285}
   rotateHelpDuration: 0.5
@@ -22966,8 +23109,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677491009565430456}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0.08715596, y: -0, z: -0, w: -0.9961947}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22975,7 +23118,7 @@ Transform:
   - {fileID: 150632295}
   m_Father: {fileID: 2677491009502442313}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 350, y: 0, z: 0}
 --- !u!33 &2677491009565430460
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23114,9 +23257,9 @@ MonoBehaviour:
   playOnStart: 0
   dontWaitInQueueToPlay: 1
   useProxyAsCore: 1
-  useDefaultCoreProxy: 1
+  useDefaultCoreProxy: 0
   defaultCoreProxy: MazeRun.AnimflexCoreProxyForMazeCoreTime
-  coreProxy: {fileID: 0}
+  coreProxy: {fileID: 1664911085}
   resetOnPlay: 1
   activateNextClipsASAP: 1
   sequence:
@@ -23252,9 +23395,9 @@ MonoBehaviour:
   playOnStart: 0
   dontWaitInQueueToPlay: 1
   useProxyAsCore: 1
-  useDefaultCoreProxy: 1
+  useDefaultCoreProxy: 0
   defaultCoreProxy: MazeRun.AnimflexCoreProxyForMazeCoreTime
-  coreProxy: {fileID: 0}
+  coreProxy: {fileID: 1664911085}
   resetOnPlay: 1
   activateNextClipsASAP: 1
   sequence:
@@ -23434,7 +23577,6 @@ GameObject:
   - component: {fileID: 2677491010541189888}
   - component: {fileID: 1664911084}
   - component: {fileID: 1664911085}
-  - component: {fileID: 4559826321152572717}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Untagged
@@ -23511,20 +23653,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   setDefault: 1
   coreTime: {fileID: 1664911084}
---- !u!114 &4559826321152572717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2677491010541189919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e22e25fcb2c452189878abf63ad0067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 2677491009485720775}
-  coreTime: {fileID: 1664911084}
 --- !u!1 &2677491010587028206
 GameObject:
   m_ObjectHideFlags: 0
@@ -23558,6 +23686,8 @@ Transform:
   - {fileID: 2677491009722069884}
   - {fileID: 2677491010909529893}
   - {fileID: 1105928171}
+  - {fileID: 1578168178719247769}
+  - {fileID: 2090826020}
   m_Father: {fileID: 2677491010541189888}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23608,9 +23738,9 @@ MonoBehaviour:
   playOnStart: 0
   dontWaitInQueueToPlay: 1
   useProxyAsCore: 1
-  useDefaultCoreProxy: 1
+  useDefaultCoreProxy: 0
   defaultCoreProxy: MazeRun.AnimflexCoreProxyForMazeCoreTime
-  coreProxy: {fileID: 0}
+  coreProxy: {fileID: 1664911085}
   resetOnPlay: 1
   activateNextClipsASAP: 1
   sequence:
@@ -23884,9 +24014,9 @@ MonoBehaviour:
   playOnStart: 0
   dontWaitInQueueToPlay: 1
   useProxyAsCore: 1
-  useDefaultCoreProxy: 1
+  useDefaultCoreProxy: 0
   defaultCoreProxy: MazeRun.AnimflexCoreProxyForMazeCoreTime
-  coreProxy: {fileID: 0}
+  coreProxy: {fileID: 1664911085}
   resetOnPlay: 1
   activateNextClipsASAP: 1
   sequence:
@@ -23975,3 +24105,141 @@ MonoBehaviour:
               m_Calls: []
           fromObject: {fileID: 2677491009565430457}
           target: {x: 0.1, y: -0.25, z: 0.2}
+--- !u!1 &7845049344257688820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578168178719247769}
+  - component: {fileID: 5592918727531980560}
+  m_Layer: 0
+  m_Name: showUpSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1578168178719247769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845049344257688820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2677491010587028207}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5592918727531980560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845049344257688820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 0
+  useDefaultCoreProxy: 0
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyScaled
+  coreProxy: {fileID: 1664911085}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: view
+      delay: 0
+      clip:
+        rid: 6990533340041314407
+    - name: view
+      delay: 0
+      clip:
+        rid: 6990533340041314408
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533340041314407
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 26
+          duration: 1
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 2677491009565430457}
+          target: {x: 0, y: 0, z: 0}
+    - rid: 6990533340041314408
+      type: {class: CTweenerLocalRotation, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 0
+          duration: 1
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 2677491009565430457}
+          target: {x: 0, y: 0, z: 0}
