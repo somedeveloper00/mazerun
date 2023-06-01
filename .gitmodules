@@ -10,3 +10,6 @@
 [submodule "Assets/Plugins/UnityDialogueSystem"]
 	path = Assets/Plugins/UnityDialogueSystem
 	url = https://github.com/somedeveloper00/UnityDialogueSystem
+[submodule "Assets/Plugins/UnityIngameDebugConsole"]
+	path = Assets/Plugins/UnityIngameDebugConsole
+	url = https://github.com/yasirkula/UnityIngameDebugConsole
