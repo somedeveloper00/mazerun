@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.4
   m_LinearFogStart: 0
   m_LinearFogEnd: 18.02
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.61743504, g: 0.64747244, b: 0.7075472, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1.25
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 6f2b8f1ffe4471b4f8515fae1cbcc613, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.53285134, g: 0.53787637, b: 0.52649945, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,159 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &52833739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52833740}
+  - component: {fileID: 52833742}
+  - component: {fileID: 52833741}
+  m_Layer: 0
+  m_Name: winSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &52833740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52833739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52833741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52833739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 1
+  useDefaultCoreProxy: 1
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyUnscaled
+  coreProxy: {fileID: 0}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: zoom
+      delay: 0
+      clip:
+        rid: 6990533355335581722
+    - name: Node 1
+      delay: 0
+      clip:
+        rid: 6990533355335581750
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533355335581722
+      type: {class: CTweenerCameraOrthoSize, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 9
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194227}
+          target: 15
+    - rid: 6990533355335581750
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 3
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0, y: 1, z: -20}
+--- !u!114 &52833742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52833739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0538525ae2841f0a08942becb4784e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2122236429}
+  seq: {fileID: 52833741}
 --- !u!1 &172478979
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240872173
 GameObject:
@@ -220,8 +373,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!1818360608 &240872175
 PositionConstraint:
@@ -242,11 +396,398 @@ PositionConstraint:
   m_Sources:
   - sourceTransform: {fileID: 880762981}
     weight: 1
---- !u!4 &495876939 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2677491009502442313, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-  m_PrefabInstance: {fileID: 880762979}
+--- !u!1 &354057842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354057843}
+  - component: {fileID: 354057845}
+  - component: {fileID: 354057844}
+  m_Layer: 0
+  m_Name: startSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &354057843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354057842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &354057844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354057842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 1
+  useDefaultCoreProxy: 1
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyUnscaled
+  coreProxy: {fileID: 0}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: zoom
+      delay: 0
+      clip:
+        rid: 6990533355335581722
+    - name: Node 1
+      delay: 0
+      clip:
+        rid: 6990533355335581749
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533355335581722
+      type: {class: CTweenerCameraOrthoSize, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 3
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194227}
+          target: 20
+    - rid: 6990533355335581749
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 3
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0, y: 0, z: -20}
+--- !u!114 &354057845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354057842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d63d05b172425aa3224b8d10a7f7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2122236429}
+  seq: {fileID: 354057844}
+--- !u!1 &487023975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487023976}
+  - component: {fileID: 487023978}
+  - component: {fileID: 487023977}
+  m_Layer: 0
+  m_Name: loseSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &487023976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487023975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487023977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487023975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 1
+  useDefaultCoreProxy: 1
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyUnscaled
+  coreProxy: {fileID: 0}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: zoom
+      delay: 0
+      clip:
+        rid: 6990533355335581722
+    - name: Node 0
+      delay: 0
+      clip:
+        rid: 6990533355335581706
+    - name: Node 1
+      delay: 0
+      clip:
+        rid: 6990533355335581707
+    - name: Node 2
+      delay: 0
+      clip:
+        rid: 6990533355335581708
+    - name: 
+      delay: 0.5
+      clip:
+        rid: 6990533355335581723
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533355335581706
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 1
+          useTargetTransform: 0
+          from: 0
+          ease: 0
+          duration: 0.05
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0.5, y: 0.5, z: 0}
+    - rid: 6990533355335581707
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 1
+          useTargetTransform: 0
+          from: 0
+          ease: 0
+          duration: 0.05
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0, y: -0.5, z: 0}
+    - rid: 6990533355335581708
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 0
+          duration: 0.2
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0, y: 1, z: -20}
+    - rid: 6990533355335581722
+      type: {class: CTweenerCameraOrthoSize, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 3
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194227}
+          target: 14
+    - rid: 6990533355335581723
+      type: {class: CEnd, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+--- !u!114 &487023978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487023975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5138eff2504eb0b5fa943dbaf2a913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2122236429}
+  seq: {fileID: 487023977}
 --- !u!1 &578828276
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 674323082}
   - component: {fileID: 674323083}
+  - component: {fileID: 674323084}
   m_Layer: 0
   m_Name: map
   m_TagString: Untagged
@@ -562,7 +1104,7 @@ Transform:
   m_Children:
   - {fileID: 1361295389}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &674323083
 MonoBehaviour:
@@ -780,6 +1322,20 @@ MonoBehaviour:
       m_RotationOrder: 0
   startingChunk: {fileID: 1361295390}
   updateInterval: 0.1
+  time: {fileID: 674323084}
+--- !u!114 &674323084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674323081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8632fb28b02044b8a61096da94c6443b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useNormalTime: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +1365,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -866,14 +1422,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0, y: -0.31895936, z: 0, w: 0.9477684}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_Father: {fileID: 240872174}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -37.2, z: 0}
 --- !u!1001 &880762979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -881,53 +1437,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 16197884, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: explosion.selections.Array.data[0].clipIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: sequence.nodes.Array.data[0].clip
-      value: 6990533340041314413
-      objectReference: {fileID: 0}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413]
-      value: Assembly-CSharp-firstpass AnimFlex.GameObjectInstantiate_Par
-      objectReference: {fileID: 0}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413].parent
+    - target: {fileID: 1664911085, guid: 33843c142cb206842a79934fc79774f5, type: 3}
+      propertyPath: coreTime
       value: 
-      objectReference: {fileID: 495876939}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413].gameObject
+      objectReference: {fileID: 2122236431}
+    - target: {fileID: 2677491009485720775, guid: 33843c142cb206842a79934fc79774f5, type: 3}
+      propertyPath: coreTime
       value: 
-      objectReference: {fileID: 1861300416}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413].andSetActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413].andPlayItsSequence
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 111519240, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314413].worldPositionStays
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090826021, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314412].tweenerGenerator.from
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090826021, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314412].tweenerGenerator.target.x
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 2677491009565430457, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -40
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2122236431}
     - target: {fileID: 2677491010541189888, guid: 33843c142cb206842a79934fc79774f5, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2677491010541189888, guid: 33843c142cb206842a79934fc79774f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -973,10 +1493,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Runner
       objectReference: {fileID: 0}
-    - target: {fileID: 5592918727531980560, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-      propertyPath: managedReferences[6990533340041314407].tweenerGenerator.target.y
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33843c142cb206842a79934fc79774f5, type: 3}
 --- !u!114 &880762980 stripped
@@ -995,17 +1511,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2677491009485720774, guid: 33843c142cb206842a79934fc79774f5, type: 3}
   m_PrefabInstance: {fileID: 880762979}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &880762982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1664911084, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-  m_PrefabInstance: {fileID: 880762979}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b6a69285dc4df7888d80c8eb1ddfb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &880762983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2677491009485720775, guid: 33843c142cb206842a79934fc79774f5, type: 3}
@@ -1070,7 +1575,7 @@ Camera:
   far clip plane: 140
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1094,10 +1599,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 1, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 487023976}
+  - {fileID: 354057843}
+  - {fileID: 52833740}
+  - {fileID: 1454707506}
   m_Father: {fileID: 240872174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1287,11 +1796,159 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a5c1797bf346bfbde40114c86b6ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1861300416 stripped
+--- !u!1 &1454707505
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 632295932, guid: 33843c142cb206842a79934fc79774f5, type: 3}
-  m_PrefabInstance: {fileID: 880762979}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454707506}
+  - component: {fileID: 1454707508}
+  - component: {fileID: 1454707507}
+  m_Layer: 0
+  m_Name: reviveSeq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1454707506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454707505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1454707507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454707505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e8afad3c64e64b1323784efd490e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  dontWaitInQueueToPlay: 1
+  useProxyAsCore: 1
+  useDefaultCoreProxy: 1
+  defaultCoreProxy: AnimFlex.Core.Proxy.AnimFlexCoreProxyUnscaled
+  coreProxy: {fileID: 0}
+  resetOnPlay: 1
+  activateNextClipsASAP: 1
+  sequence:
+    activateNextClipsASAP: 1
+    nodes:
+    - name: zoom
+      delay: 0
+      clip:
+        rid: 6990533355335581722
+    - name: Node 1
+      delay: 0
+      clip:
+        rid: 6990533355335581749
+  references:
+    version: 2
+    RefIds:
+    - rid: 6990533355335581722
+      type: {class: CTweenerCameraOrthoSize, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
+      data:
+        playNextOnStart: 1
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 3
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194227}
+          target: 20
+    - rid: 6990533355335581749
+      type: {class: CTweenerLocalPosition, ns: AnimFlex.Sequencer.Clips, asm: AnimFlex}
+      data:
+        playNextOnStart: 0
+        tweenerGenerator:
+          customCurve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          useCurve: 0
+          useQuaternion: 0
+          relative: 0
+          useTargetTransform: 0
+          from: 0
+          ease: 27
+          duration: 0.5
+          delay: 0
+          pingPong: 0
+          loops: 0
+          loopDelay: 0
+          onStart:
+            m_PersistentCalls:
+              m_Calls: []
+          onUpdate:
+            m_PersistentCalls:
+              m_Calls: []
+          onComplete:
+            m_PersistentCalls:
+              m_Calls: []
+          onKill:
+            m_PersistentCalls:
+              m_Calls: []
+          fromObject: {fileID: 963194228}
+          target: {x: 0, y: 0, z: -20}
+--- !u!114 &1454707508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454707505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aab7ed70dc46c889fb5adf8cb9e292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2122236429}
+  seq: {fileID: 1454707507}
 --- !u!1 &2088610983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +2044,7 @@ RectTransform:
   m_Children:
   - {fileID: 1095733802}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1416,6 +2073,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2122236428}
   - component: {fileID: 2122236429}
+  - component: {fileID: 2122236430}
+  - component: {fileID: 2122236431}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -1438,7 +2097,7 @@ Transform:
   - {fileID: 583102877}
   - {fileID: 578828277}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2122236429
 MonoBehaviour:
@@ -1455,6 +2114,34 @@ MonoBehaviour:
   levelInfo: {fileID: 11400000, guid: 4028fdab9e8c9464d96ba780108db3d3, type: 2}
   mapGenerator: {fileID: 674323083}
   playerMovement: {fileID: 880762983}
-  coreTime: {fileID: 880762982}
+  coreTime: {fileID: 2122236431}
   mainCanvas: {fileID: 2088610986}
   mainMenu: {fileID: 1095733805}
+--- !u!114 &2122236430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122236427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd6ffbe826c43138e5e8587825e7dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 11400000, guid: e27b5768662fda74e8ab2e4ab38938ce, type: 2}
+  - {fileID: 11400000, guid: 3bcf73e3d823be340bddad318dca18ea, type: 2}
+--- !u!114 &2122236431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122236427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b6a69285dc4df7888d80c8eb1ddfb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocksTime: {fileID: 674323084}

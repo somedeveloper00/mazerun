@@ -19,13 +19,13 @@ namespace MazeRun.UI.MainMenu {
         [SerializeField] GameObject winContainer;
         
         public event Action OnPlay = delegate {  };
-        public event Action onContinueBtnClick = delegate {  };
+        public event Action onReviveBtnClick = delegate {  };
         
         protected override void Start() {
             base.Start();
             
             playBtn.onClick.AddListener( () => OnPlay.Invoke() );
-            continueBtn.onClick.AddListener( () => onContinueBtnClick.Invoke() );
+            continueBtn.onClick.AddListener( () => onReviveBtnClick.Invoke() );
          
             inSeq.sequence.onPlay += () => {
                 canvas.enabled = true;

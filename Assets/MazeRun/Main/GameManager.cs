@@ -1,11 +1,9 @@
 using System;
-using System.Threading.Tasks;
 using BlockyMapGen;
 using DialogueSystem;
 using MazeRun.Core;
 using MazeRun.UI.Hud;
 using MazeRun.UI.MainMenu;
-using TriInspector;
 using UnityEngine;
 
 namespace MazeRun.Main {
@@ -21,29 +19,41 @@ namespace MazeRun.Main {
         [SerializeField] MainMenuDialogue mainMenu;
         
         public event Action OnProgressPointsUpdated = delegate {  };
+        public event Action OnStart = delegate { };
+        public event Action OnRevive = delegate { };
+        public event Action OnLose = delegate { };
+        public event Action OnWin = delegate {  };
         
         HudDialogue _hudDialogue;
+        Vector3 _lastInputPlayerPos;
+        Quaternion _lastInputPlayerRot;
 
         
         void Start() {
             mapGenerator.enabled = false;
             mapGenerator.onBlockReached += onBlockReached;
             
-            mainMenu.OnPlay += () => {
-                mainMenu.Hide();
-                StartGame();
-            };
-            mainMenu.onContinueBtnClick += () => {
-                mainMenu.Hide();
-                ContinueGame();
-            };
+            mainMenu.OnPlay += StartGame;
+            mainMenu.onReviveBtnClick += Revive;
             mainMenu.Show();
             
-            playerMovement.onJump += () => { };
-            playerMovement.onSlide += () => { };
-            playerMovement.onRight += () => { };
-            playerMovement.onLeft += () => { };
+            playerMovement.onJump += captureLastPlayerTransform;
+            playerMovement.onSlide += captureLastPlayerTransform;
+            playerMovement.onRight += captureLastPlayerTransform;
+            playerMovement.onLeft += captureLastPlayerTransform;
             playerMovement.onLose += Lose;
+            playerMovement.Hide();
+        }
+
+        void OnDrawGizmosSelected() {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere( _lastInputPlayerPos, 0.1f );
+            Gizmos.DrawLine( _lastInputPlayerPos, _lastInputPlayerPos + _lastInputPlayerRot * Vector3.forward );
+        }
+
+        void captureLastPlayerTransform() {
+            _lastInputPlayerPos = playerMovement.transform.position;
+            _lastInputPlayerRot = playerMovement.transform.rotation;
         }
 
         void onBlockReached(Block block) {
@@ -78,6 +88,8 @@ namespace MazeRun.Main {
 
             _hudDialogue = DialogueManager.Current.GetOrCreate<HudDialogue>( mainCanvas.transform );
             _hudDialogue.gameManager = this;
+            mainMenu.Hide();
+            OnStart();
         }
 
         public void Win() {
@@ -85,44 +97,55 @@ namespace MazeRun.Main {
             
             mainMenu.showLoseContainer = false;
             mainMenu.showWinContainer = true;
+            mainMenu.showContinueOption = false;
             mainMenu.Show();
+            
+            coreTime.ResetTime();
+            coreTime.Pause();
             
             playerMovement.enabled = false;
             playerMovement.transform.localPosition = Vector3.zero;
-            coreTime.ResetTime();
+            playerMovement.transform.rotation = Quaternion.identity;
+            playerMovement.Hide();
             
             mapGenerator.ResetMap();
             mapGenerator.enabled = false;
+            OnWin();
         }
         
         public void Lose() {
             Debug.Log( $"Lost the game" );
             
             playerMovement.enabled = false;
-            playerMovement.transform.localPosition = Vector3.zero;
             coreTime.Pause();
             
-            mapGenerator.ResetMap();
             mapGenerator.enabled = false;
             
             _hudDialogue.Close();
             
-            // mainMenu.showContinueOption = true; //TODO: make game continue-able
+            mainMenu.showContinueOption = true;
             mainMenu.showWinContainer = false;
             mainMenu.showLoseContainer = true;
             mainMenu.Show();
+            OnLose();
         }
 
-        public void ContinueGame() {
+        public void Revive() {
             Debug.Log( $"continuing game" );
             
+            playerMovement.transform.localPosition = _lastInputPlayerPos;
+            playerMovement.transform.localRotation = _lastInputPlayerRot;
             playerMovement.enabled = true;
+            playerMovement.Revive();
+
+            mapGenerator.enabled = true;
+            
             coreTime.Resume();
             
-            playerMovement.Revive();
-            
+            mainMenu.Hide();
             _hudDialogue = DialogueManager.Current.GetOrCreate<HudDialogue>( mainCanvas.transform );
             _hudDialogue.gameManager = this;
+            OnRevive();
         }
     }
 }

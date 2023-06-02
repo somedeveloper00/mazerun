@@ -23,6 +23,11 @@ namespace MazeRun.UI.Hud {
             pauseBtn.onClick.AddListener( Pause );
             resumeBtn.onClick.AddListener( UnPause );
         }
+        
+        protected override void OnDestroy() {
+            base.OnDestroy();
+            gameManager.OnProgressPointsUpdated -= GameManagerOnOnProgressPointsUpdated;
+        }
 
         void GameManagerOnOnProgressPointsUpdated() {
             pointsTextPrev.text = pointsText.text;

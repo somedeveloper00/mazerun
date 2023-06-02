@@ -1207,15 +1207,14 @@ MonoBehaviour:
       type: {class: CTransformsLocalReset, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
       data:
         transforms:
-        - {fileID: 271867870480627887}
-        - {fileID: 5597512599527209848}
-        - {fileID: 5597512599729347008}
-        - {fileID: 271867870509689475}
-        - {fileID: 271867869654417420}
-        - {fileID: 271867870767524965}
-        - {fileID: 271867870887810990}
-        - {fileID: 271867871320993384}
-        - {fileID: 3225563886686525029}
+        - transform: {fileID: 3225563886686525029}
+          type: 2
+        - transform: {fileID: 3225563886686525029}
+          type: 4
+        - transform: {fileID: 271867871084687852}
+          type: 3
+        - transform: {fileID: 271867871334356952}
+          type: 3
         localPosition: 1
         localRotation: 1
         localScale: 1
@@ -1657,15 +1656,14 @@ MonoBehaviour:
       type: {class: CTransformsLocalReset, ns: AnimFlex, asm: Assembly-CSharp-firstpass}
       data:
         transforms:
-        - {fileID: 271867870480627887}
-        - {fileID: 5597512599527209848}
-        - {fileID: 5597512599729347008}
-        - {fileID: 271867870509689475}
-        - {fileID: 271867869654417420}
-        - {fileID: 271867870767524965}
-        - {fileID: 271867870887810990}
-        - {fileID: 271867871320993384}
-        - {fileID: 3225563886686525029}
+        - transform: {fileID: 3225563886686525029}
+          type: 2
+        - transform: {fileID: 3225563886686525029}
+          type: 4
+        - transform: {fileID: 271867871084687852}
+          type: 3
+        - transform: {fileID: 271867871334356952}
+          type: 3
         localPosition: 1
         localRotation: 1
         localScale: 1
