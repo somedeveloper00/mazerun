@@ -1,7 +1,6 @@
 using System.ComponentModel;
 using AnimFlex.Core.Proxy;
 using MazeRun.Core;
-using MazeRun.Utils;
 using UnityEngine;
 
 namespace MazeRun {

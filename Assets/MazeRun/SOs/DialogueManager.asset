@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DialogueManager
   m_EditorClassIdentifier: 
   focusManager: {fileID: 11400000, guid: 3bcf73e3d823be340bddad318dca18ea, type: 2}
-  closeOnEscape: 1
   creators:
   - prefab: {fileID: 271867870187551085, guid: 1546a70dc821e1d4896dab6c1a65b009, type: 3}
     maxInstances: 1
@@ -22,6 +21,11 @@ MonoBehaviour:
     fallbackPixelPerUnit: 1
   - prefab: {fileID: 8563272285405858786, guid: dbb01ab6adaa81841b1fe44cfc30b259, type: 3}
     maxInstances: 1
+    maximumReachedBehaviour: 0
+    fallbackScale: {x: 1080, y: 1920}
+    fallbackPixelPerUnit: 1
+  - prefab: {fileID: 2568590340249139750, guid: e89eab6224570ae48ad4b51a8b778e6e, type: 3}
+    maxInstances: -1
     maximumReachedBehaviour: 0
     fallbackScale: {x: 1080, y: 1920}
     fallbackPixelPerUnit: 1
