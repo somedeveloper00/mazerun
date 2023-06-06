@@ -16,3 +16,9 @@
 [submodule "Assets/RemoteLevels"]
 	path = Assets/RemoteLevels
 	url = https://github.com/somedeveloper00/mazerun-levels
+[submodule "Assets/Plugins/UnityTodo"]
+	path = Assets/Plugins/UnityTodo
+	url = https://github.com/somedeveloper00/UnityTodo
+[submodule "Assets/Plugins/PlayerPrefsEditor"]
+	path = Assets/Plugins/PlayerPrefsEditor
+	url = https://github.com/sabresaurus/PlayerPrefsEditor

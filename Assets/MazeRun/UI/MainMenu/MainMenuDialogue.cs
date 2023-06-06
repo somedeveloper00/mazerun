@@ -10,7 +10,7 @@ namespace MazeRun.UI.MainMenu {
         public bool showContinueOption = true;
         public bool showLoseContainer = true;
         public bool showWinContainer = true;
-
+        
         [SerializeField] SequenceAnim inSeq, outSeq;
         [SerializeField] Button playBtn;
         [SerializeField] Button continueBtn;
@@ -46,6 +46,7 @@ namespace MazeRun.UI.MainMenu {
             
             inSeq.PlaySequence();
         }
+        
         public void Hide() {
             if (outSeq.sequence.IsPlaying()) return;
             if (inSeq.sequence.IsPlaying()) inSeq.StopSequence();

@@ -52,11 +52,13 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: dfa95855f0a14ff40bf640d2ee5f5cb4, type: 3}
   - {fileID: 21300000, guid: 8b0b7b675d921014b97d13a5abc05f49, type: 3}
+  - {fileID: 21300000, guid: 50bad5981dff86f4c9d25c670f102341, type: 3}
   - {fileID: 21300000, guid: 63aba4996688870468d23d9730f888a0, type: 3}
   - {fileID: 21300000, guid: 2fbc4bce416db5b4889350fa68fe8e84, type: 3}
   m_PackedSpriteNamesToIndex:
   - shop
   - settings
+  - continue
   - line
   - leaderboard
   m_RenderDataMap: {}

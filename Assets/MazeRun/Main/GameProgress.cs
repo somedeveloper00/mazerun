@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 namespace MazeRun.Main {
+    [Serializable]
     public struct GameProgress {
         public bool active;
         public long points;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MazeRun.Core.Hit {
+namespace MazeRun.Hit {
     public class HitTarget : MonoBehaviour {
         
     }

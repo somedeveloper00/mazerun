@@ -1,7 +1,8 @@
 using System;
 using System.Linq;
 using AnimFlex.Sequencer;
-using MazeRun.Core.Hit;
+using MazeRun.Hit;
+using MazeRun.Utils;
 using TriInspector;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ namespace MazeRun.Core {
         [SerializeField] HitChecking loseChecking;
         [SerializeField] SequenceAnim hideSeq;
         [SerializeField] SequenceAnim showUpSeq;
+        [SerializeField] SequenceAnim loseSeq;
         [SerializeField] SequenceAnim jumpSeq;
         [SerializeField] SequenceAnim slideSeq;
         [SerializeField] SequenceAnim rotateRightSeq;
@@ -37,7 +39,6 @@ namespace MazeRun.Core {
         [SerializeField] HitChecking[] helpRotateLeftCheckings;
 
         [Title( "Big Events" )] 
-        [SerializeField] LoseAnimHandler loseAnimHandler;
         
         float _helpDelayedInputTime = -1;
         [ShowInInspector, ReadOnly] int _movementLock = 0;
@@ -71,6 +72,8 @@ namespace MazeRun.Core {
             hideSeq.sequence.onComplete += () => resetLock( "hideSeq" );
             showUpSeq.sequence.onPlay += () => increaseLock( "showUpSeq" );
             showUpSeq.sequence.onComplete += () => resetLock( "showUpSeq" );
+            loseSeq.sequence.onPlay += () => resetLock( "loseSeq" );
+            loseSeq.sequence.onComplete += () => hideSeq.PlaySequence();
         }
 
         void OnEnable() => input.onInputReceived += onMovementInputReceived;
@@ -134,9 +137,11 @@ namespace MazeRun.Core {
         
         
         void updateLose() {
-            if (!loseChecking.Hits( out _ )) return;
+            if (!loseChecking.Hits( out var hit )) return;
+             Debug.Log( $"Lose: {hit.name} <i>(click to select)</i>", hit );
             stopAllAnims();
-            loseAnimHandler.StartAnimation();
+            resetLock( "Lose" );
+            loseSeq.PlaySequence();
             onLose();
         }
         
@@ -153,6 +158,7 @@ namespace MazeRun.Core {
             if (reviveSeq.sequence.IsPlaying())         reviveSeq.StopSequence();
             if (invincibleStartSeq.sequence.IsPlaying()) invincibleStartSeq.StopSequence();
             if (invincibleEndSeq.sequence.IsPlaying())  invincibleEndSeq.StopSequence();
+            if (loseSeq.sequence.IsPlaying())           loseSeq.StopSequence();
         }
 
         void onMovementInputReceived(MovementInput.InputType inputType) {

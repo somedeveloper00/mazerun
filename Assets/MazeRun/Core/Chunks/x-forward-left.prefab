@@ -569,6 +569,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockX-forward (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6485904431384776869, guid: 3ad8bddbe62954b458999002982899bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485904431384776869, guid: 3ad8bddbe62954b458999002982899bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad8bddbe62954b458999002982899bd, type: 3}
 --- !u!4 &6018027879464308658 stripped

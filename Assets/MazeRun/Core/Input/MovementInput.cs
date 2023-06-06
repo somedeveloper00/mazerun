@@ -6,7 +6,7 @@ namespace MazeRun.Core {
 
         public event Action<InputType> onInputReceived;
         
-        void Update() {
+        protected virtual void Update() {
             var ip = GetInputType();
             if (ip.HasValue) onInputReceived?.Invoke( ip.Value );
         }

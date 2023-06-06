@@ -4,34 +4,29 @@ using UnityEngine;
 
 namespace MazeRun.Data {
     public abstract class DataIO : ScriptableObject {
-        public void Load(Action<byte[]> onLoaded, Action<Exception> onLoadError) {
-            try {
-                var handler = new GameObject( "DataIO coroutine handler" ).AddComponent<DataIOCoroutineHandlerComponent>();
-                DontDestroyOnLoad( handler );
-                handler.StartCoroutine( LoadBytes( bytes => {
-                    onLoaded?.Invoke( bytes );
-                    Destroy( handler.gameObject );
-                } ) );
-            }
-            catch (Exception e) {
+        public void Load<T>(Action<T> onLoaded, Action<Exception> onLoadError) {
+            var handler = new GameObject( "DataIO coroutine handler" ).AddComponent<DataIOCoroutineHandlerComponent>();
+            DontDestroyOnLoad( handler );
+            handler.StartCoroutine( LoadValue<T>( value => {
+                onLoaded?.Invoke( value );
+                Destroy( handler.gameObject );
+            }, e => {
                 Debug.LogException( e );
                 onLoadError?.Invoke( e );
-            }
+            } ) );
         }
 
-        public void Save(byte[] bytes, Action onSaved, Action<Exception> onSaveError) {
-            try {
-                var handler = new GameObject( "DataIO coroutine handler" ).AddComponent<DataIOCoroutineHandlerComponent>();
-                DontDestroyOnLoad( handler );
-                handler.StartCoroutine( SaveBytes( bytes, () => onSaved?.Invoke() ) );
-            }
-            catch (Exception e) {
-                Debug.LogException( e );
-                onSaveError?.Invoke( e );
-            }
+        public void Save<T>(T value, Action onSaved, Action<Exception> onSaveError) {
+            var handler = new GameObject( "DataIO coroutine handler" ).AddComponent<DataIOCoroutineHandlerComponent>();
+            DontDestroyOnLoad( handler );
+            handler.StartCoroutine( SaveValue( value, () => onSaved?.Invoke(),
+                e => {
+                    Debug.LogException( e );
+                    onSaveError?.Invoke( e );
+                }) );
         }
 
-        protected abstract IEnumerator LoadBytes(Action<byte[]> onFinish);
-        protected abstract IEnumerator SaveBytes(byte[] bytes, Action onFinish);
+        protected abstract IEnumerator LoadValue<T>(Action<T> onFinish, Action<Exception> onError);
+        protected abstract IEnumerator SaveValue<T>(T value, Action onFinish, Action<Exception> onError);
     }
 }

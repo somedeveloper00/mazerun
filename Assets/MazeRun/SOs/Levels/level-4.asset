@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94d741f40b394903ad474d05201e8457, type: 3}
-  m_Name: userData
+  m_Script: {fileID: 11500000, guid: 5d13cb66b9ac44348227d0649948d3dc, type: 3}
+  m_Name: level-4
   m_EditorClassIdentifier: 
-  filePath: user.dat
+  order: 4
+  scoresToWin: 20

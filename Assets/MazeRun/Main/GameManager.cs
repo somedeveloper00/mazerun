@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using BlockyMapGen;
 using DialogueSystem;
 using MazeRun.Core;
+using MazeRun.Level;
 using MazeRun.UI.Hud;
 using MazeRun.UI.MainMenu;
 using UnityEngine;
@@ -9,14 +11,17 @@ using UnityEngine;
 namespace MazeRun.Main {
     public class GameManager : MonoBehaviour {
 
-        public GameProgress currentProgress = new() { active = false };
-
-        public LevelInfo levelInfo;
+        public LevelManager levelManager;
         [SerializeField] MapGenerator mapGenerator;
         [SerializeField] PlayerMovement playerMovement;
         [SerializeField] CoreTime coreTime;
         [SerializeField] Canvas mainCanvas;
         [SerializeField] MainMenuDialogue mainMenu;
+        [SerializeField] int reviveChance = 3;
+        
+        [NonSerialized] public GameProgress currentProgress = new() { active = false };
+        [NonSerialized] public UserData.Data userData;
+        [NonSerialized] public LevelInfo currentLevelInfo;
         
         public event Action OnProgressPointsUpdated = delegate {  };
         public event Action OnStart = delegate { };
@@ -25,11 +30,12 @@ namespace MazeRun.Main {
         public event Action OnWin = delegate {  };
         
         HudDialogue _hudDialogue;
-        Vector3 _lastInputPlayerPos;
-        Quaternion _lastInputPlayerRot;
+        Queue<Vector3> _lastSafePos = new (3);
+        Queue<Quaternion> _lastSafeRot = new (3);
 
-        
+
         void Start() {
+            currentLevelInfo = levelManager.LocalLevels[userData.level];
             mapGenerator.enabled = false;
             mapGenerator.onBlockReached += onBlockReached;
             
@@ -37,32 +43,26 @@ namespace MazeRun.Main {
             mainMenu.onReviveBtnClick += Revive;
             mainMenu.Show();
             
-            playerMovement.onJump += captureLastPlayerTransform;
-            playerMovement.onSlide += captureLastPlayerTransform;
-            playerMovement.onRight += captureLastPlayerTransform;
-            playerMovement.onLeft += captureLastPlayerTransform;
             playerMovement.onLose += Lose;
             playerMovement.Hide();
-        }
-
-        void OnDrawGizmosSelected() {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere( _lastInputPlayerPos, 0.1f );
-            Gizmos.DrawLine( _lastInputPlayerPos, _lastInputPlayerPos + _lastInputPlayerRot * Vector3.forward );
-        }
-
-        void captureLastPlayerTransform() {
-            _lastInputPlayerPos = playerMovement.transform.position;
-            _lastInputPlayerRot = playerMovement.transform.rotation;
+            currentProgress.startTime = DateTime.UtcNow;
         }
 
         void onBlockReached(Block block) {
             if (currentProgress.active) {
                 currentProgress.points++;
                 OnProgressPointsUpdated();
-                if (levelInfo.scoresToWin <= currentProgress.points) {
-                    Win();
-                }
+                if (currentLevelInfo.scoresToWin <= currentProgress.points) Win();
+            }
+            captureLastSafePlayerTransform();
+        }
+
+        void captureLastSafePlayerTransform() {
+            _lastSafePos.Enqueue(playerMovement.transform.localPosition);
+            _lastSafeRot.Enqueue(playerMovement.transform.localRotation);
+            if (_lastSafePos.Count > reviveChance) {
+                _lastSafePos.Dequeue();
+                _lastSafeRot.Dequeue();
             }
         }
 
@@ -72,16 +72,18 @@ namespace MazeRun.Main {
         }
 
         void updateGameRecord() {
-            currentProgress.pos = playerMovement.transform.position;
+            currentProgress.pos = playerMovement.transform.localPosition;
         }
 
         public void StartGame() {
             currentProgress = new GameProgress { active = true };
-            
+
             mapGenerator.ResetMap();
             mapGenerator.enabled = true;
-            
+
             playerMovement.enabled = true;
+            playerMovement.transform.localPosition = Vector3.zero;
+            playerMovement.transform.localRotation = Quaternion.identity;
             playerMovement.ShowUp();
             coreTime.ResetTime();
             coreTime.Resume();
@@ -110,7 +112,10 @@ namespace MazeRun.Main {
             
             mapGenerator.ResetMap();
             mapGenerator.enabled = false;
+            
             OnWin();
+
+            currentLevelInfo = levelManager.LocalLevels[userData.level];
         }
         
         public void Lose() {
@@ -123,7 +128,7 @@ namespace MazeRun.Main {
             
             _hudDialogue.Close();
             
-            mainMenu.showContinueOption = true;
+            mainMenu.showContinueOption = _lastSafePos.Count > 0;
             mainMenu.showWinContainer = false;
             mainMenu.showLoseContainer = true;
             mainMenu.Show();
@@ -133,8 +138,8 @@ namespace MazeRun.Main {
         public void Revive() {
             Debug.Log( $"continuing game" );
             
-            playerMovement.transform.localPosition = _lastInputPlayerPos;
-            playerMovement.transform.localRotation = _lastInputPlayerRot;
+            playerMovement.transform.localPosition = _lastSafePos.Dequeue();
+            playerMovement.transform.localRotation = _lastSafeRot.Dequeue();
             playerMovement.enabled = true;
             playerMovement.Revive();
 
