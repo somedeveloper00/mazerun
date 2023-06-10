@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f426c28f004c51b70860267b3cb7bd, type: 3}
+  m_Name: MazeRun TODO
+  m_EditorClassIdentifier: 
+  order: -1
+  title: MazeRun TODO
+  tasks:
+  - title: Make Invincibles auto-rotate on turns
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Add effects for passing obstacles'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references:
+    - name: prefab
+      path: Assets/MazeRun/Core/Blocks/Obstacles/Obstacle-center.prefab
+  - title: Minor fixes
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints:
+    - description: make invincible cube white
+      done: 0
+    references:
+    - name: inside this prefab
+      path: Assets/MazeRun/Core/RunnerResources/Runner.prefab
+    - name: maybe modify
+      path: Assets/MazeRun/Core/RunnerResources/RunnerMat.mat
+  - title: Enhance Main Menu
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints:
+    - description: add current score
+      done: 0
+    - description: add a button to win by watching an ad
+      done: 0
+    references:
+    - name: 
+      path: Assets/MazeRun/UI/MainMenu
+  - title: Enhance HUD
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints:
+    - description: add current score
+      done: 0
+    references:
+    - name: 
+      path: Assets/MazeRun/UI/Hud
+  - title: ' Power-ups'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Add 20 levels
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Balance difficulty'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Ads'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Settings'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Add sfx and music'
+    description: 
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Leaderboard'
+    description: using http GET on server to get a list of best players. figure out
+      security risks
+    progress: 0
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Shader & Walls visuals
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Add Drag input system'
+    description: Adding separate drag and drop system in the input assembly
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: ' Make HUD art'
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Data Save/Load
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Win/Lose
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Implement revive system
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Make it level based
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Fix first input performance hit
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Map gen fix
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Fix first input performance hit
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Main menu and hud
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
+  - title: Level Manager
+    description: 
+    progress: 1
+    isEditing: 0
+    bulletPoints: []
+    references: []
