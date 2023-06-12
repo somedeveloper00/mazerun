@@ -15,97 +15,30 @@ MonoBehaviour:
   order: -1
   title: MazeRun TODO
   tasks:
-  - title: Make Invincibles auto-rotate on turns
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
   - title: ' Add effects for passing obstacles'
     description: 
     progress: 0
     isEditing: 0
-    bulletPoints: []
+    bulletPoints:
+    - description: make effect
+      done: 1
+    - description: implement logic
+      done: 0
     references:
     - name: prefab
       path: Assets/MazeRun/Core/Blocks/Obstacles/Obstacle-center.prefab
   - title: Minor fixes
     description: 
-    progress: 0
+    progress: 1
     isEditing: 0
     bulletPoints:
     - description: make invincible cube white
-      done: 0
+      done: 1
     references:
     - name: inside this prefab
       path: Assets/MazeRun/Core/RunnerResources/Runner.prefab
     - name: maybe modify
       path: Assets/MazeRun/Core/RunnerResources/RunnerMat.mat
-  - title: Enhance Main Menu
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints:
-    - description: add current score
-      done: 0
-    - description: add a button to win by watching an ad
-      done: 0
-    references:
-    - name: 
-      path: Assets/MazeRun/UI/MainMenu
-  - title: Enhance HUD
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints:
-    - description: add current score
-      done: 0
-    references:
-    - name: 
-      path: Assets/MazeRun/UI/Hud
-  - title: ' Power-ups'
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: Add 20 levels
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: ' Balance difficulty'
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: ' Ads'
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: ' Settings'
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: ' Add sfx and music'
-    description: 
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
-  - title: ' Leaderboard'
-    description: using http GET on server to get a list of best players. figure out
-      security risks
-    progress: 0
-    isEditing: 0
-    bulletPoints: []
-    references: []
   - title: Shader & Walls visuals
     description: 
     progress: 1

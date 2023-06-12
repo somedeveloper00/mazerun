@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using AnimFlex.Sequencer;
 using MazeRun.Hit;
-using MazeRun.Utils;
 using TriInspector;
 using UnityEngine;
 
@@ -32,6 +31,7 @@ namespace MazeRun.Core {
         [Title( "Hit Checks" )] 
         [SerializeField] HitChecking rotateRightHitChecking;
         [SerializeField] HitChecking rotateLeftHitChecking;
+        [SerializeField] HitChecking forwardHitChecking;
         
         [Title("Rotate Helping")]
         [SerializeField] float rotateHelpDuration = 0.5f;
@@ -112,6 +112,31 @@ namespace MazeRun.Core {
                 _lastFrameInvincible = invincible;
             }
             if (!invincible) updateLose();
+            if (invincible) checkForAutoRotate();
+        }
+
+        void checkForAutoRotate() {
+            var forwardHits = forwardHitChecking.Hits( out _ );
+            var rightHits = rotateRightHitChecking.Hits( out _ );
+            var leftHits = rotateLeftHitChecking.Hits( out _ );
+
+            if (forwardHits) {
+                Debug.Log( $"for hits" );
+                if (!rightHits) {
+                    if (jumpSeq.sequence.IsPlaying() || slideSeq.sequence.IsPlaying()) 
+                        resetJumpAndSlide();
+                    resetLock( "inv right" );
+                    _helpDelayedInput = null;
+                    moveRight();
+                }
+                else if (!leftHits) {
+                    if (jumpSeq.sequence.IsPlaying() || slideSeq.sequence.IsPlaying())
+                        resetJumpAndSlide();
+                    resetLock( "inv left" );
+                    _helpDelayedInput = null;
+                    moveLeft();
+                }
+            }
         }
 
         public void Hide() {

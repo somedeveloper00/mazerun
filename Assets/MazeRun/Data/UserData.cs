@@ -50,7 +50,7 @@ namespace MazeRun.Level {
             dataio.Load<Data>( data => {
                 this.data = data;
                 done = true;
-            }, null );
+            }, _ => done = true );
             yield return new WaitUntil( () => done );
             gameManager.userData = data;
             Debug.Log( "data loaded" );
@@ -63,16 +63,10 @@ namespace MazeRun.Level {
             dataio.Save( data, () => {
                 Debug.Log( $"Data saved" );
                 done = true;
-            }, null );
+            }, _ => done = true );
             yield return new WaitUntil( () => done );
         }
 
-        [Button]
-        void DeleteAll() {
-            dataio.Save<Data>( null, null, null );
-            data = new Data();
-        }
-        
         [Serializable] public class Data {
             public int totalWin;
             public int totalLose;

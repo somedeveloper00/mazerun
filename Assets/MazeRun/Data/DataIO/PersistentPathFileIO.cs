@@ -26,17 +26,23 @@ namespace MazeRun.Data {
             var path = Application.persistentDataPath;
             EditorUtility.RevealInFinder( path );
         }
+
+        [Button]
+        void deleteFile() {
+            File.Delete( Path.Combine( Application.persistentDataPath, filePath ) );
+        }
 #endif
 
         protected override IEnumerator LoadValue<T>(Action<T> onFinish, Action<Exception> onError) {
-            if (!File.Exists( filePath )) {
-                onError( new FileNotFoundException( "File not found", filePath ) );
+            var path = Path.Combine( Application.persistentDataPath, filePath );
+            if (!File.Exists( path )) {
+                onError( new FileNotFoundException( "File not found", path ) );
                 yield break;
             }
 
             switch (serializer) {
                 case Serializer.BinarySerializer: {
-                    var task = File.ReadAllBytesAsync( filePath );
+                    var task = File.ReadAllBytesAsync( path );
                     yield return new WaitUntil( () => task.IsCompleted );
                     var bytes = task.Result;
                     try {
@@ -48,7 +54,7 @@ namespace MazeRun.Data {
                     break;
                 }
                 case Serializer.JsonUtility: {
-                    var task = File.ReadAllTextAsync( filePath );
+                    var task = File.ReadAllTextAsync( path );
                     yield return new WaitUntil( () => task.IsCompleted );
                     try {
                         var result = JsonUtility.FromJson<T>( task.Result );
